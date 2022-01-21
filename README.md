@@ -1,28 +1,26 @@
 # C# SDK 使用指南
 
-## 功能说明
+## 1 Brief Introduction
 
-WcsLib 是较为原始的封装，没有引入 JSON 库，所有正确操作返回的结果都是 JSON 字符串，您需要自己选择一个 JSON 库，并按照文档去正确解读。您可能觉得不够便利，但这样做也有好处：您可以自行选择 JSON 库。如果我们内部也使用，则存在和您选择的不同的可能性。
+WcsLib is a relatively primitive encapsulation with no JSON library, all correct operations return JSON strings, so you need to choose a JSON library to get it correctly according to the documentations. You might think it not convenient enough, but it has an advantage: you are allowed to choose JSON library yourself. If we use it internally, there are possibilities that are different from what you choose.
 
-我们会提供更多基于 WcsLib 的范例代码，做更高层封装，来解决便利性问题。
+We will provide more sample code based on WcsLib and do higher-level encapsulation to solve the convenience problem.
 
-## 版本说明
+## 2 Version
 
-### 1.0.1.0
+1.0.1.0
 
-首次发布，还不支持 UWP，主要是 HttpManager 类还不支持。
+Initial launch, UWP is not supported now, mainly HttpManager class.
 
-## 初始化
 
-在使用 SDK 之前，您需要获得一对有效的 AccessKey 和 SecretKey 签名授权。
+## 3 Initialization
 
-可以通过如下方法获得：
-
-1. 开通网宿云存储账号
-2. 登录网宿 SI 平台，在安全管理-秘钥管理查看 AccessKey 和 SecretKey
-3. 登录网宿 SI 平台，在安全管理-域名管理查看上传域名（UploadHost）和管理域名(ManageHost)。
-
-获取上面配置之后，调用如下代码进行初始化：
+Before using the SDK, you need to obtain a valid AccessKey and SecretKey signature authorization.
+You can use the following methods:
+1. Obtain an account for Object Storage.
+2. Log in to the Console portal, view the AccessKey and SecretKey in Security Settings ->  API information management -> AccessKey Management.
+3. Log in to the Console portal, view the upload domain (UploadHost) and manage domain (ManageHost)  in Object Storage Service -> Buckets -> Overview -> Domain Names.
+Call the following code to initialize after above configurations:
 
 ```
 Mac mac = new Mac("<AccessKey>", "<SecretKey>");
@@ -30,5 +28,10 @@ Mac mac = new Mac("<AccessKey>", "<SecretKey>");
 Config config = new Config("<UploadHost>", "<ManageHost>", true);	// use HTTPS
 ```
 
-## 使用说明
-请参考test目录下的demo
+## 4 Instructions
+
+See demo in the test directory in the link of [wcs-csharp-sdk](wcs-csharp-sdk).
+
+![image.png](https://www.wangsu.com/wos/draft/help_doc/en_us/16033/21685/1636080523820_image.png)
+
+
