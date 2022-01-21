@@ -1,4 +1,4 @@
-# C# SDK 使用指南
+# C# SDK User Guide
 
 ## 1 Brief Introduction
 
