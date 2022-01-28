@@ -1,37 +1,23 @@
 # C# SDK User Guide
 
-## 1 Brief Introduction
+## 1 Initialization
 
-WcsLib is a relatively primitive encapsulation with no JSON library, all correct operations return JSON strings, so you need to choose a JSON library to get it correctly according to the documentations. You might think it not convenient enough, but it has an advantage: you are allowed to choose JSON library yourself. If we use it internally, there are possibilities that are different from what you choose.
+**AK/SK**, **Upload Domain** and **Manage Domain** is required for C# SDK. You can get these information by following steps:
+1. account: Apply for CDNetworks cloud storage service, get the account.
 
-We will provide more sample code based on WcsLib and do higher-level encapsulation to solve the convenience problem.
+2. AK/SK: Log in to CDNetworks SI portal, and you can get the AccessKey and SecretKey in Security Console - AK/SK Management
 
-## 2 Version
+3. puturl&mgrurl: Log in to SI portal and view the Upload Domain (puturl) and Manage Domain (mgrurl) in Bucket Overview -> Bucket Settings
 
-1.0.1.0
-
-Initial launch, UWP is not supported now, mainly HttpManager class.
-
-
-## 3 Initialization
-
-Before using the SDK, you need to obtain a valid AccessKey and SecretKey signature authorization.
-You can use the following methods:
-1. Obtain an account for Object Storage.
-2. Log in to the Console portal, view the AccessKey and SecretKey in Security Settings ->  API information management -> AccessKey Management.
-3. Log in to the Console portal, view the upload domain (UploadHost) and manage domain (ManageHost)  in Object Storage Service -> Buckets -> Overview -> Domain Names.
-Call the following code to initialize after above configurations:
-
+Initialize after getting these information:
 ```
 Mac mac = new Mac("<AccessKey>", "<SecretKey>");
-//Config config = new Config("<UploadHost>", "<ManageHost>", false);	// use HTTP
-Config config = new Config("<UploadHost>", "<ManageHost>", true);	// use HTTPS
+//Config config = new Config("<UploadHost>", "<ManageHost>", false);	// by HTTP
+Config config = new Config("<UploadHost>", "<ManageHost>", true);	// by HTTPS
 ```
 
-## 4 Instructions
+## 2 How to use
 
-See demo in the test directory in the link of [wcs-csharp-sdk](wcs-csharp-sdk).
-
-![image.png](https://www.wangsu.com/wos/draft/help_doc/en_us/16033/21685/1636080523820_image.png)
+See demo under test directory.
 
 
