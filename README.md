@@ -30,5 +30,5 @@ Config config = new Config("<UploadHost>", "<ManageHost>", true);	// use HTTPS
 
 ## 4 Instructions
 
-See demo in the test directory in the link of [wcs-csharp-sdk](wcs-csharp-sdk).
+See demos in the test directory.
 
